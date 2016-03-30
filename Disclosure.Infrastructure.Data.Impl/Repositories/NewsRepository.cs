@@ -24,6 +24,8 @@ namespace Disclosure.Infrastructure.Data.Impl.Repositories
             using (var dbCtx = new DisclosureDbContext())
             {
                 dbCtx.Entry(newsEntity).State = System.Data.Entity.EntityState.Modified;
+                dbCtx.Entry(newsEntity).Property(x => x.PublicationDate).IsModified = false;
+
                 dbCtx.SaveChanges();
             }
         }

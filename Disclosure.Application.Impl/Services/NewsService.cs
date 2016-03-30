@@ -20,12 +20,12 @@ namespace Disclosure.Application.Impl.Services
         public void AddNews(NewsDto newsDto)
         {
             newsDto.PublicationDate = DateTime.UtcNow;
-            _newsRepository.Insert(NewsEntityMapper.Map(newsDto));
+            _newsRepository.Insert(NewsEntityMapper.MapToAdd(newsDto));
         }
 
         public void UpdateNews(NewsDto newsDto)
         {
-            _newsRepository.Update(NewsEntityMapper.Map(newsDto));
+            _newsRepository.Update(NewsEntityMapper.MapToUpdate(newsDto));
         }
 
         public void DeleteNews(int id)

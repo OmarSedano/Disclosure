@@ -1,11 +1,24 @@
 ﻿using Disclosure.Application.Contracts.Dtos.NewsService;
 using Disclosure.Domain;
+using System;
 
 namespace Disclosure.Application.Impl.Mappers.NewsService
 {
     public static class NewsEntityMapper
     {
-        public static NewsEntity Map(NewsDto newsDto)
+        public static NewsEntity MapToAdd(NewsDto newsDto)
+        {
+            return new NewsEntity
+            {
+                Author = newsDto.Author,
+                Body = newsDto.Body,
+                Headline = newsDto.Headline,
+                PublicationDate = DateTime.UtcNow,
+                Summary = newsDto.Summary
+            };
+        }
+
+        public static NewsEntity MapToUpdate(NewsDto newsDto)
         {
             return new NewsEntity
             {
@@ -13,9 +26,8 @@ namespace Disclosure.Application.Impl.Mappers.NewsService
                 Author = newsDto.Author,
                 Body = newsDto.Body,
                 Headline = newsDto.Headline,
-                PublicationDate = newsDto.PublicationDate,
                 Summary = newsDto.Summary
             };
         }
-    }
+    }  
 }
