@@ -13,7 +13,7 @@ namespace Disclosure.Models
     public class UserDbContext : IdentityDbContext<ApplicationUser>
     {
         public UserDbContext()
-            : base("DefaultConnection")
+            : base("name=UserDB")
         {
         }
 

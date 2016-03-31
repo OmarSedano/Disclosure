@@ -1,6 +1,27 @@
 ﻿
 
 <div ng-controller="homeController">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <h1>Hi @User.Identity.Name !</h1>
+    }
     Disclosure
     <h1>{{welcome}}</h1>
+</div>
+<div>
+    <form method="post" action="@Url.Action("Register", "Account")">
+        Email: <input type="text" name="Email"/><br/>
+        Password: <input type="password" name="Password"/><br/>
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+<hr/>
+
+<div>
+    <form method="post" action="@Url.Action("Login", "Account")">
+        Email: <input type="text" name="Email" /><br />
+        Password: <input type="password" name="Password" /><br />
+        <button type="submit">Ligub</button>
+    </form>
 </div>
