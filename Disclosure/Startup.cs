@@ -9,6 +9,8 @@ namespace Disclosure
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+            //Allow CORS for ASP.NET Web API
+            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
         }
     }
 
