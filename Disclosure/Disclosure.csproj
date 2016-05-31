@@ -184,12 +184,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\services\authenticationInterceptorService.js" />
     <Content Include="App\services\authenticationService.js" />
+    <Content Include="App\services\newsService.js" />
     <Content Include="packages.config" />
-    <Content Include="Views\Disclosure\Index.cshtml" />
+    <Content Include="Resources\Scripts\frameworks\angular-local-storage.js" />
+    <Content Include="Resources\Scripts\frameworks\bootstrap.min.js" />
+    <Content Include="Resources\css\frameworks\bootstrap.min.css" />
+    <Content Include="Resources\Scripts\frameworks\jquery-1.12.3.min.js" />
+    <Content Include="Resources\images\news_photo.jpg" />
+    <Content Include="Views\Templates\Index.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\Layout.cshtml" />
-    <Content Include="Views\Disclosure\Templates\_home.cshtml" />
+    <Content Include="Views\Templates\Home.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -210,13 +218,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Api\NewsController.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\AccountController.cs" />
-    <Compile Include="Controllers\Api\NewsController.cs" />
-    <Compile Include="Controllers\DisclosureController.cs" />
+    <Compile Include="Controllers\TemplatesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

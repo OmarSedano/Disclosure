@@ -14,19 +14,14 @@ namespace Disclosure
     {
         public void ConfigureAuth(IAppBuilder app)
         {
+            //This is to create instance for each request
             app.CreatePerOwinContext(UserDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
-            app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
-
-            //app.UseCookieAuthentication(new CookieAuthenticationOptions {
-            //    AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-            //    LoginPath = new PathString("/Home/Index")
-            //});
 
             OAuthAuthorizationServerOptions OAuthServerOptions = new OAuthAuthorizationServerOptions()
             {
                 AllowInsecureHttp = true,
-                TokenEndpointPath = new PathString("/token"),
+                TokenEndpointPath = new PathString("/token"), //Path to login user. For example:http://localhost:8080/token and then pass username andpassword
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
                 Provider = new ApplicationOAuthProvider()
             };

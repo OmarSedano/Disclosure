@@ -27,7 +27,7 @@ namespace Disclosure.Controllers.Api
         [HttpPost]
         public async Task<IHttpActionResult> Register(RegisterViewModel model)
         {
-            var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+            var user = new ApplicationUser { UserName = model.UserName, Email = model.UserName };
             var result = await UserManager.CreateAsync(user, model.Password);
             if (!result.Succeeded)
                 return InternalServerError();

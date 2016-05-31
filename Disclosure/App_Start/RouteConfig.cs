@@ -10,9 +10,15 @@ namespace Disclosure.App_Start
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Init",
+                url: "",
+                defaults: new { controller = "Templates", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Disclosure", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Templates", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

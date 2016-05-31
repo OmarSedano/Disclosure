@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-angular.module('disclosureApp', ['ui.router'])
+angular.module('disclosureApp', ['ui.router','LocalStorageModule'])
     .config(['$stateProvider', '$urlRouterProvider',
         function($stateProvider, $urlRouterProvider) {
 
@@ -9,7 +9,7 @@ angular.module('disclosureApp', ['ui.router'])
         $stateProvider
             .state('home', {
                 url: "/home",
-                templateUrl: "Disclosure/Home",
+                templateUrl: "Templates/Home",
                 controller: "homeController"
             });
         }]);

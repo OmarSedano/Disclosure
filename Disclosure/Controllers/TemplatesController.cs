@@ -2,9 +2,9 @@
 
 namespace Disclosure.Controllers
 {
-    public class DisclosureController: Controller
+    public class TemplatesController: Controller
     {
-
+        
         public ActionResult Index()
         {
             return View();
@@ -12,7 +12,7 @@ namespace Disclosure.Controllers
 
         public ActionResult Home()
         {
-            return View("~/Views/Disclosure/Templates/_home.cshtml");
+            return View();
         }
     }
 }
